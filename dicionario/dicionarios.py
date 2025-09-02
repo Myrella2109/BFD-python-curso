@@ -1,9 +1,8 @@
 #exercicío 1-Crie um dicionário chamado aluno com as chaves: "nome", "idade" e "nota", 
 # e preencha com valores fictícios.
-aluno = {"Nome": "Carla", "Idade" : 16, "Média" : 9}
 print("Exercicío 1-")
+aluno = { "Nome": "Carla", "Idade": 17, "Nota": 9}
 print(aluno)
-
 
 #exercicío 2- Dado o dicionário:
 #produto = {"nome": "Caneta", "preço": 2.5, "estoque": 100}

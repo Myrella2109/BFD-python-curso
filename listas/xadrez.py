@@ -19,5 +19,6 @@ tabuleiro[1] = ["peã" for _ in range(8)]
 tabuleiro[6] = ["peã" for _ in range(8)]
 tabuleiro[7] = ["tor", "cav", "bis", "rai", "rei", "bis", "cav", "tor"]
 
+
 for linha in tabuleiro:
     print(" ".join(linha))
