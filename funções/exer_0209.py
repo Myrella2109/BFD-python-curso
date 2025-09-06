@@ -74,13 +74,16 @@ print("\nExercicío 7-")
 def dados_pessoais(**kwargs):
     dados = {}
     for chave in kwargs:
-        valor = input(f"Digite {chave}: ")
+        valor = input(f"Digite o/a {chave}: ")
         dados[chave] = valor
     
     print("\nDados informados:")
     for chave, valor in dados.items():
         print(f"{chave}: {valor}")
-print(dados_pessoais())
+    
+    return dados
+dados = dados_pessoais(nome=None, idade=None, email=None)
+
 
 
 #exercicío 8-Crie uma função chamada calculadora que tenha dentro dela outras funções 
@@ -106,18 +109,23 @@ resul = calcular(num1, num2, operacao)
 print("O resultado da operação é:", resul)
 
 
-#exercicío 9-
+#exercicío 9- Crie uma função chamada aplicar_operacao que receba dois números e uma função como parâmetros. 
+# A função deve aplicar a operação recebida (ex: soma, multiplicação). Exemplo:
+#def soma(a, b): return a + b
+#aplicar_operacao(3, 4, soma)
 print("\nExercicío 9-")
-def divisao(num1, num2):
-    num1 = int(input("Digite o primeiro número:"))
-    num2 = int(input("Digite o segundo número:"))
-    if num2 != 0:
-         return num1 / num2 
-    else:
-         return "Erro: divisão por zero"
+def aplicar_operacao(operacao):
+    num1 = float(input("Digite o primeiro número: "))
+    num2 = float(input("Digite o segundo número: "))
     
-def aplicar_operacao(num1, num2):
-    num1 = int(input("Digite o primeiro número:"))
-    num2 = int(input("Digite o segundo número:"))
-    return f"A divisão com {num1} e {num2} é:"
-print(aplicar_operacao( num1, num2, divisao))          
+    resultado = operacao(num1, num2)
+    
+    return resultado
+
+def dividir(a, b):
+    if b == 0:
+        return "Erro: divisão por zero!"
+    return a / b
+
+resultado = aplicar_operacao(dividir)
+print("Resultado:", resultado)       
