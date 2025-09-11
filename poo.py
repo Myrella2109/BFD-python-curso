@@ -1,4 +1,4 @@
-#exercicío1-Crie uma classe chamada Pessoa que tenha os atributos nome e idade.
+#exercicío 1-Crie uma classe chamada Pessoa que tenha os atributos nome e idade.
 #Em seguida, crie dois objetos dessa classe e imprima os valores de seus atributos.
 class Pessoa:
     def __init__(self, nome, idade):
