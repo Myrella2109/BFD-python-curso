@@ -62,7 +62,7 @@ class Pessoa:
 pessoa = Pessoa("Ana", "15-05-1990", "123.456.789-00", "MG-12.345.678")
 print(pessoa)
 
-pessoa.set__cpf = "987.654.321-00"
-pessoa.set__ident = "SP-87.654.321"
-
+pessoa.set__cpf("987.654.321-00")
+pessoa.set__ident("SP-87.654.321")
 print("\nApós alteração:")
+print(pessoa)
