@@ -13,7 +13,7 @@ pes2 = Pessoa("Carlos Araujo", 38)
 print(pes1)
 print(pes2)
 
-#exercicío2-Expanda a classe Pessoa para incluir um método apresentar() que imprima uma frase como:
+#ecExpanda a classe Pessoa para incluir um método apresentar() que imprima uma frase como:
 # "Olá, meu nome é João e tenho 25 anos.". Teste o método chamando-o a partir de um objeto.
 print("\nExercicío 2-")
 class Pessoa:
@@ -50,16 +50,90 @@ carro1 = Carro("Jeep", "Jeep Compass", 2025 )
 print("Primeira opção-", carro1)
 carro2 = Carro("Ford", "F-250", 2010)
 print("\nSegunda opção-", carro2)
+carro2.ano = 2015
+print("\nSegunda opção modificada-", carro2)
 carro3 = Carro("Volkswagen","Polo Track", 2023)
 print("\nTerceira opção-", carro3)
 
-# exercicío5-Crie uma classe ContaBancaria com os atributos titular e saldo. Adicione um método 
+#exercicío 5-Crie uma classe ContaBancaria com os atributos titular e saldo. Adicione um método 
 # depositar(valor) que aumenta o saldo e um método sacar(valor) 
 # que diminui o saldo (se houver saldo suficiente). Teste com depósitos e saques.
+print("\nExercicío 5-")
+class ContaBancaria:
+    def __init__(self, titular, saldo=0):
+        self.titular = titular
+        self.saldo = saldo
 
-# exercicío6-Modifique a classe ContaBancaria para que o método sacar retorne True se a operação for 
+    def depositar(self, valor):
+        if valor > 0:
+            self.saldo += valor
+            print(f"Depósito de R${valor:.2f} realizado. Saldo atual: R${self.saldo:.2f}")
+        else:
+            print("Valor de depósito deve ser positivo.")
+
+    def sacar(self, valor):
+        if valor <= 0:
+            print("Valor de saque deve ser positivo.")
+        elif valor > self.saldo:
+            print("Saldo insuficiente para saque.")
+        else:
+            self.saldo -= valor
+            print(f"Saque de R${valor:.2f} realizado. Saldo atual: R${self.saldo:.2f}")
+conta = ContaBancaria("João", 100)
+
+conta.depositar(50)   
+conta.sacar(30)       
+conta.sacar(200)      
+conta.depositar(10) 
+conta.sacar(20)      
+
+
+
+#exercicío 6- Modifique a classe ContaBancaria para que o método sacar retorne True se a operação for 
 # bem-sucedida e False caso contrário. Teste o retorno e imprima mensagens adequadas.
+print("\nExercicío 6-")
+class ContaBancaria:
+    def __init__(self, titular, saldo=0):
+        self.titular = titular
+        self.saldo = saldo
 
+    def depositar(self, valor):
+        if valor > 0:
+            self.saldo += valor
+            print(f"Depósito de R${valor:.2f} realizado. Saldo atual: R${self.saldo:.2f}")
+        else:
+            print("Valor de depósito deve ser positivo.")
+
+
+    def sacar(self, valor):
+        if valor <= 0:
+            print("Valor de saque deve ser positivo.")
+            return False
+        elif valor > self.saldo:
+            print("Saldo insuficiente para saque.")
+            return False
+        else:
+            self.saldo -= valor
+            print(f"Saque de R${valor:.2f} realizado. Saldo atual: R${self.saldo:.2f}")
+            return True
+
+conta = ContaBancaria("João", 100)
+
+conta.depositar(50)  
+if conta.sacar(30):
+    print("Saque efetuado com sucesso.")
+else:
+    print("Falha ao realizar saque.")
+
+if conta.sacar(200):
+    print("Saque efetuado com sucesso.")
+else:
+    print("Falha ao realizar saque.")
+
+if conta.sacar(20):
+    print("Saque efetuado com sucesso.")
+else:
+    print("Falha ao realizar saque.")
 
 # exercicío 7/8-Crie uma classe Aluno com atributos nome e nota. 
 # Depois crie uma classe Turma que tenha uma lista de alunos e um método adicionar_aluno(aluno). 
@@ -106,5 +180,20 @@ turma.adicionar_aluno(aluno7)
 
 turma.listar_alunos()
 
-# exercicío9-Crie uma classe Cachorro com um atributo de classe especie = "Canis familiaris" 
+# exercicío 9-Crie uma classe Cachorro com um atributo de classe especie = "Canis familiaris" 
 # e atributos de instância nome e idade. Mostre a diferença entre acessar especie pelo objeto e pela classe.
+print("\nExercicío 9-")
+class Cachorro:
+    especie = "Canis familiaris"  
+    def __init__(self, nome, idade):
+        self.nome = nome           
+        self.idade = idade     
+
+    def __str__(self):
+        return f"Especie: {self.especie}\nNome: {self.nome}\nIdade: {self.idade}"
+         
+dog = Cachorro("Rex", 5)
+print(dog)
+print("\n", Cachorro.especie)  
+print(dog.especie)      
+
