@@ -33,8 +33,6 @@ conta.sacar(200)
 conta.depositar(100) 
 conta.sacar(2000)      
 
-
-
 #exercicío 2-Crie uma classe, Pessoa, que tenha os atributos: nome,  data de nascimento,, cpf, identidade. 
 #Deixe os atributos cpf e identidade como privado e monte os métodos setters e getters para acessar e editar os valores
 print("\nExercicío 2-")
