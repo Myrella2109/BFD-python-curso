@@ -5,7 +5,9 @@
 .schema Curso
 
 -- 1- COUNT: Mostre quantos alunos estão cadastrados na tabela Aluno.
-SELECT COUNT(*) AS total_alunos FROM Aluno;
+SELECT COUNT
+(*)
+ AS total_alunos FROM Aluno;
 
 -- 2- MIN: Mostre a menor mensalidade entre todos os cursos cadastrados.
 SELECT MIN(mensalidade) AS menor_mensalidade FROM Curso;
